@@ -1,0 +1,155 @@
+<!DOCTYPE html><html><head><title>第一章 PHP入门</title><meta charset='utf-8'><link href='https://dn-maxiang.qbox.me/res-min/themes/marxico.css' rel='stylesheet'><style></style></head><body><div id='preview-contents' class='note-content'>
+                        
+                    
+
+<h1 id="第一章-php入门">第一章 PHP入门</h1>
+
+<h4 id="1php所需环境">1.PHP所需环境</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs awk"><div class="hljs-line">安装 wampServer 
+</div><div class="hljs-line">安装包以及安装步骤：链接：https:<span class="hljs-regexp">//</span>pan.baidu.com<span class="hljs-regexp">/s/</span><span class="hljs-number">17</span>M0QNNmRyzFN9NWRSW41IA 密码：sxvm
+</div></code></pre>
+
+<h4 id="2php标记">2.PHP标记</h4>
+
+<pre class="prettyprint hljs-dark"><code class="hljs xml"><div class="hljs-line">以 <span class="php"><span class="hljs-meta">&lt;?php</span>  开始 ，以  <span class="hljs-meta">?&gt;</span></span>  结束  后缀名 .php
+</div></code></pre>
+
+<h4 id="3php注释-和-空格">3.PHP注释 和 空格</h4>
+
+<pre class="prettyprint hljs-dark"><code class="hljs gauss"><div class="hljs-line"><span class="hljs-comment">//   单行注释   </span>
+</div><div class="hljs-line"><span class="hljs-comment">/* */</span>  多行注释
+</div><div class="hljs-line">空格：间隔字符（换行（回车）、空格、制表符（<span class="hljs-built_in">Tab</span>））
+</div></code></pre>
+
+<h4 id="4php语句">4.PHP语句</h4>
+
+<pre class="prettyprint hljs-dark"><code class="hljs django"><div class="hljs-line"><span class="xml">echo : 可以输出一个或多个字符，用逗号分隔，结束处必须有分号,可以使用点（.）操作符链接
+</span></div><div class="hljs-line">    例：
+</div><div class="hljs-line">    <span class="php"><span class="hljs-meta">&lt;?php</span>
+</span></div><div class="hljs-line">        $x=<span class="hljs-number">1</span>; <span class="hljs-comment">//定义变量</span>
+</div><div class="hljs-line">        $y=<span class="hljs-number">1</span>;
+</div><div class="hljs-line">        $z=$x+$y;
+</div><div class="hljs-line">        <span class="hljs-keyword">echo</span> $x,$y,$z;
+</div><div class="hljs-line">        <span class="hljs-keyword">echo</span> $x . <span class="hljs-string">'+'</span> . $y . <span class="hljs-string">'='</span> . $z;  <span class="hljs-comment">// 1+1=2</span>
+</div><div class="hljs-line">    <span class="hljs-meta">?&gt;</span>
+</div><div class="hljs-line">print：只允许输出一个字符串，返回值总为1，可以使用点（.）操作符链接
+</div><div class="hljs-line">    例：
+</div><div class="hljs-line">    <span class="php"><span class="hljs-meta">&lt;?php</span>
+</span></div><div class="hljs-line">        $x=<span class="hljs-number">1</span>;
+</div><div class="hljs-line">        $y=<span class="hljs-number">1</span>;
+</div><div class="hljs-line">        $z=$x+$y;
+</div><div class="hljs-line">        <span class="hljs-comment">// print $x,$y,$z; //报错 只能单个输出</span>
+</div><div class="hljs-line">        <span class="hljs-keyword">print</span> $x . <span class="hljs-string">'+'</span> . $y . <span class="hljs-string">'='</span> . $z;  <span class="hljs-comment">// 1+1=2</span>
+</div><div class="hljs-line">    <span class="hljs-meta">?&gt;</span>
+</div><div class="hljs-line">heredoc语法：<span class="hljs-tag">&lt;&lt;&lt;<span class="hljs-attr">thenEnd</span>(是一种在命令<span class="hljs-attr">shell</span>和程序语言定义一个字符串的方式)
+</span></div><div class="hljs-line">    * 结束处必须后接分号，否则编译不通过
+</div><div class="hljs-line">    * <span class="hljs-attr">thenEnd</span> 可以用任意其它字符代替，只需保证结束标识与开始标识一致
+</div><div class="hljs-line">    * 结束标识必须顶格独占一行（即必须从行首开始，前后不能衔接任何空白和字符）
+</div><div class="hljs-line">    * 当内容需要内嵌引号时不需要加转译字符
+</div><div class="hljs-line">    例：
+</div><div class="hljs-line">    &lt;?<span class="hljs-attr">php</span>
+</div><div class="hljs-line">        <span class="hljs-attr">echo</span> &lt;&lt;&lt;<span class="hljs-attr">thenEnd</span>
+</div><div class="hljs-line">            &lt;/<span class="hljs-attr">br</span>&gt;line 1
+</div><div class="hljs-line">            <span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span>line ‘2’
+</div><div class="hljs-line">            <span class="hljs-tag">&lt;/<span class="hljs-name">br</span>&gt;</span>line 3
+</div><div class="hljs-line">    thenEnd;
+</div><div class="hljs-line">    ?&gt;
+</div></code></pre>
+
+<h4 id="5php标识符命名规则">5.PHP标识符命名规则</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs stata"><div class="hljs-line"><span class="hljs-comment"> * 标识符可以是任何长度，而且可以由任何字母、数字、下划线组成</span>
+</div><div class="hljs-line"><span class="hljs-comment"> * 标识符不能以数字开始</span>
+</div><div class="hljs-line"><span class="hljs-comment"> * 在PHP中，标识符是区分大小写的。（函数名不区分大小写）</span>
+</div><div class="hljs-line"><span class="hljs-comment"> * 变量名称可以与函数名称相同。这一点容易造成混淆，虽然是允许的，但应该尽量避免使用。此外不能创建一个与已有函数同名的函数</span>
+</div></code></pre>
+
+<h4 id="5php调用date函数">5.PHP调用date()函数</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs sqf"><div class="hljs-line">初步了解，详解后续....
+</div><div class="hljs-line">    调用格式：<span class="hljs-built_in">date</span>(<span class="hljs-string">'Y/m/d  h:i:sa  , jS F Y'</span>)   <span class="hljs-comment">// 2018/05/08 03:27:35pm, 8th May 2018</span>
+</div><div class="hljs-line">        参数详解：
+</div><div class="hljs-line">            Y/m/d - 年/月/日 （Y.m.d   Y-m-d）
+</div><div class="hljs-line">            h - 带有首位零的 <span class="hljs-number">12</span> 小时小时格式  H - <span class="hljs-number">24</span>小时格式
+</div><div class="hljs-line">            i - 带有首位零的分钟
+</div><div class="hljs-line">            s - 带有首位零的秒（<span class="hljs-number">00</span> -<span class="hljs-number">59</span>）
+</div><div class="hljs-line">            a - 小写的午前和午后（am 或 pm）
+</div><div class="hljs-line">            j - 该月的日期，不需要在前面补零，而s表示顺序后缀(th)
+</div><div class="hljs-line">            F - 月份的全称
+</div><div class="hljs-line">            Y - 年
+</div><div class="hljs-line">    例：
+</div><div class="hljs-line">    &lt;?php
+</div><div class="hljs-line">        <span class="hljs-comment">// date_default_timezone_set('PRC');</span>
+</div><div class="hljs-line">        <span class="hljs-built_in">echo</span> <span class="hljs-string">"&lt;p&gt;order processed at "</span>;
+</div><div class="hljs-line">        <span class="hljs-built_in">echo</span> <span class="hljs-built_in">date</span>(<span class="hljs-string">'H:i, jS F Y'</span>);
+</div><div class="hljs-line">        <span class="hljs-built_in">echo</span> <span class="hljs-string">"&lt;/p&gt;"</span>;
+</div><div class="hljs-line">        <span class="hljs-built_in">echo</span> <span class="hljs-string">"&lt;h2&gt;点链接符&lt;/h2&gt;"</span>;
+</div><div class="hljs-line">        <span class="hljs-built_in">echo</span> <span class="hljs-string">'hello '</span>.<span class="hljs-string">'world'</span>;
+</div><div class="hljs-line">        <span class="hljs-built_in">echo</span> <span class="hljs-string">"今天是 "</span> . <span class="hljs-built_in">date</span>(<span class="hljs-string">"Y/m/d"</span>) . <span class="hljs-string">"&lt;br&gt;"</span>; <span class="hljs-comment">//2018/05/08</span>
+</div><div class="hljs-line">        <span class="hljs-built_in">echo</span> <span class="hljs-string">"今天是 "</span> . <span class="hljs-built_in">date</span>(<span class="hljs-string">"Y.m.d"</span>) . <span class="hljs-string">"&lt;br&gt;"</span>; <span class="hljs-comment">//2018.05.08</span>
+</div><div class="hljs-line">        <span class="hljs-built_in">echo</span> <span class="hljs-string">"今天是 "</span> . <span class="hljs-built_in">date</span>(<span class="hljs-string">"Y-m-d"</span>) . <span class="hljs-string">"&lt;br&gt;"</span>; <span class="hljs-comment">//2018-05-08</span>
+</div><div class="hljs-line">        <span class="hljs-built_in">echo</span> <span class="hljs-string">"今天是 "</span> . <span class="hljs-built_in">date</span>(<span class="hljs-string">"l"</span>) . <span class="hljs-string">"&lt;br&gt;"</span>; <span class="hljs-comment">// 星期二 Tuesday </span>
+</div><div class="hljs-line">        <span class="hljs-built_in">echo</span> <span class="hljs-string">"现在时间是 "</span> . <span class="hljs-built_in">date</span>(<span class="hljs-string">"h:i:sa , jS"</span>) . <span class="hljs-string">"&lt;br&gt;"</span>;
+</div><div class="hljs-line">    ?&gt;
+</div><div class="hljs-line">    bug：获取系统时间不正确(php默认时区为UTF)
+</div><div class="hljs-line">        方法一：修改php.ini文件
+</div><div class="hljs-line">            wampServer单击 - PHP -php.ini
+</div><div class="hljs-line">            查找<span class="hljs-built_in">date</span>.timezone 时区，修改为<span class="hljs-built_in">date</span>.timezone = PRC  北京时区
+</div><div class="hljs-line">        方法二：懒人法 使用date_default_timezone_set() 方法设置
+</div><div class="hljs-line">            date_default_timezone_set(<span class="hljs-string">'PRC'</span>);
+</div></code></pre>
+
+<h4 id="6php访问表单变量">6.PHP访问表单变量</h4>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs elixir"><div class="hljs-line">  在PHP脚本中，你可以访问每一表单域，因为每个表单域都有一个PHP变量通过名称与其关联。你可以很容易的识别PHP的变量名称，因为它们都是以<span class="hljs-variable">$符</span>号开始的（漏掉这个<span class="hljs-variable">$符</span>是一个常见的变成错误）
+</div><div class="hljs-line">  可以通过<span class="hljs-variable">$_POST</span>[<span class="hljs-string">''</span>] 访问post方式的变量域  <span class="hljs-variable">$_GET</span>[<span class="hljs-string">''</span>] get 方式   <span class="hljs-variable">$_REQUEST</span>[<span class="hljs-string">''</span>]  get 和post 方式
+</div><div class="hljs-line">  <span class="hljs-symbol">bug:</span> php中文乱码 （设置头信息）
+</div><div class="hljs-line">      header(<span class="hljs-string">"Content-type: text/html; charset=utf-8"</span>); 
+</div></code></pre>
+
+<p>form.html  代码</p>
+
+<pre class="prettyprint hljs-dark"><code class="hljs xml"><div class="hljs-line"><span class="hljs-meta">&lt;!DOCTYPE html&gt;</span>
+</div><div class="hljs-line"><span class="hljs-tag">&lt;<span class="hljs-name">html</span> <span class="hljs-attr">lang</span>=<span class="hljs-string">"en"</span>&gt;</span>
+</div><div class="hljs-line"><span class="hljs-tag">&lt;<span class="hljs-name">head</span>&gt;</span>
+</div><div class="hljs-line">    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">charset</span>=<span class="hljs-string">"UTF-8"</span>&gt;</span>
+</div><div class="hljs-line">    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"viewport"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"width=device-width, initial-scale=1.0"</span>&gt;</span>
+</div><div class="hljs-line">    <span class="hljs-tag">&lt;<span class="hljs-name">meta</span> <span class="hljs-attr">http-equiv</span>=<span class="hljs-string">"X-UA-Compatible"</span> <span class="hljs-attr">content</span>=<span class="hljs-string">"ie=edge"</span>&gt;</span>
+</div><div class="hljs-line">    <span class="hljs-tag">&lt;<span class="hljs-name">title</span>&gt;</span>Document<span class="hljs-tag">&lt;/<span class="hljs-name">title</span>&gt;</span>
+</div><div class="hljs-line"><span class="hljs-tag">&lt;/<span class="hljs-name">head</span>&gt;</span>
+</div><div class="hljs-line"><span class="hljs-tag">&lt;<span class="hljs-name">body</span>&gt;</span>
+</div><div class="hljs-line">    <span class="hljs-tag">&lt;<span class="hljs-name">form</span> <span class="hljs-attr">action</span>=<span class="hljs-string">"form.php"</span> <span class="hljs-attr">method</span>=<span class="hljs-string">"POST"</span>&gt;</span>
+</div><div class="hljs-line">        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>姓名：<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"text"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"trueName"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div><div class="hljs-line">        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>年龄：<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"number"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"age"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div><div class="hljs-line">        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span>电话：<span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"tel"</span> <span class="hljs-attr">name</span>=<span class="hljs-string">"phone"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">""</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div><div class="hljs-line">        <span class="hljs-tag">&lt;<span class="hljs-name">p</span>&gt;</span><span class="hljs-tag">&lt;<span class="hljs-name">input</span> <span class="hljs-attr">type</span>=<span class="hljs-string">"submit"</span> <span class="hljs-attr">value</span>=<span class="hljs-string">"提交信息"</span>&gt;</span><span class="hljs-tag">&lt;/<span class="hljs-name">p</span>&gt;</span>
+</div><div class="hljs-line">    <span class="hljs-tag">&lt;/<span class="hljs-name">form</span>&gt;</span>
+</div><div class="hljs-line"><span class="hljs-tag">&lt;/<span class="hljs-name">body</span>&gt;</span>
+</div><div class="hljs-line"><span class="hljs-tag">&lt;/<span class="hljs-name">html</span>&gt;</span>
+</div></code></pre>
+
+<p>form.php 代码</p>
+
+
+
+<pre class="prettyprint hljs-dark"><code class="hljs xml"><div class="hljs-line"><span class="php"><span class="hljs-meta">&lt;?php</span>
+</span></div><div class="hljs-line">    header(<span class="hljs-string">"Content-type: text/html; charset=utf-8"</span>); 
+</div><div class="hljs-line">    $trueName=$_REQUEST[<span class="hljs-string">'trueName'</span>];
+</div><div class="hljs-line">    $age=$_REQUEST[<span class="hljs-string">'age'</span>];
+</div><div class="hljs-line">    $phone=$_REQUEST[<span class="hljs-string">'phone'</span>];
+</div><div class="hljs-line">    <span class="hljs-keyword">echo</span> <span class="hljs-string">'姓名：'</span> . $trueName . <span class="hljs-string">'&lt;br/&gt; 年龄：'</span> . $age . <span class="hljs-string">'&lt;br/&gt; 电话：'</span> . $phone . <span class="hljs-string">'&lt;br/&gt;'</span>;
+</div><div class="hljs-line">    <span class="hljs-keyword">echo</span> <span class="hljs-string">'姓名：'</span> . htmlspecialchars($trueName) . <span class="hljs-string">'&lt;br/&gt;年龄：'</span> . htmlspecialchars($age) . <span class="hljs-string">'&lt;br/&gt;电话：'</span> . htmlspecialchars($phone);  <span class="hljs-comment">//推荐使用 htmlspecialchars</span>
+</div><div class="hljs-line">    <span class="hljs-comment">// 单引号和双引号的区别   单引号将里面内容不做修改发送给浏览器   而双引号可以解析里面的变量</span>
+</div><div class="hljs-line">    <span class="hljs-comment">// 变量和字面量   双引号称为计算   单引号称为字面量</span>
+</div><div class="hljs-line">    <span class="hljs-comment">// 字符串类型：具有双引号、具有单引号、heredoc语法（&lt;&lt;&lt;）</span>
+</div><div class="hljs-line"><span class="hljs-meta">?&gt;</span>    
+</div></code></pre></div></body></html>
